@@ -31,3 +31,36 @@ Nodejs, Docker.
     **Average Memory Usage**
     
     `avg(nodejs_external_memory_bytes / 1024 / 1024) by (service)`
+
+4. Install Prometheus [Alertmanager](https://prometheus.io/download/) and update file alertmanager.yml.
+
+    Run `./alertmanager --config.file=alertmanager.yml` and open http://localhost:9093.
+    
+    Spam requests to test alert: `curl http://localhost:3001/?[1-100]`.
+    
+5. Run Grafana by Docker
+
+    `docker run -i -p 3000:3000 grafana/grafana`. Open http://localhost:3000.
+    
+    ```
+    Username: admin
+    Password: admin
+    ```
+    
+    **Setting datasource**
+    
+    Create a Grafana datasource with this settings:
+    
+    - name: DS_PROMETHEUS
+
+    - type: prometheus
+
+    - url: http://localhost:9090
+
+    - access: browser
+
+    **Import dashboard
+    
+    - Grafana Dashboard to import: /grafana-dashboard.json.
+    
+    
