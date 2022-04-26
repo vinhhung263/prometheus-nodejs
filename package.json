@@ -1,0 +1,16 @@
+{
+  "name": "example-prometheus",
+  "version": "1.0.0",
+  "main": "src",
+  "description": "Prometheus Nodejs example",
+  "author": "RisingStack, Inc.",
+  "scripts": {
+    "start": "node src"
+  },
+  "dependencies": {
+    "express": "4.15.3",
+    "prom-client": "9.1.1"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
