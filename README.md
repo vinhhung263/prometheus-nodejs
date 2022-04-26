@@ -14,8 +14,11 @@ Nodejs, Docker.
 2. Install [Prometheus](https://prometheus.io/download/) and update file config prometheus.yml and file rule.yaml (copy from /config).
 
     Run `./prometheus --config.file=prometheus.yml` from folder you installed. Open Prometheus: http://localhost:9090.
+    
 3. Visit your running Prometheus and run [queries](https://prometheus.io/docs/prometheus/latest/querying/basics/).
 
+    ![Untitled2](https://user-images.githubusercontent.com/62415557/165243406-7a91ceb6-646f-4a7c-87ba-2e9cd1523d0d.PNG)
+    
     **Request Per Minute**
     
     `sum(rate(http_request_duration_ms_count[1m])) by (service, route, method, code)  * 60`
@@ -33,6 +36,8 @@ Nodejs, Docker.
     `avg(nodejs_external_memory_bytes / 1024 / 1024) by (service)`
 
 4. Install Prometheus [Alertmanager](https://prometheus.io/download/) and update file alertmanager.yml.
+
+    ![Untitled3](https://user-images.githubusercontent.com/62415557/165243532-093e9d13-a696-4979-bb03-7e9d9d253741.PNG)
 
     Run `./alertmanager --config.file=alertmanager.yml` and open http://localhost:9093.
     
@@ -62,6 +67,8 @@ Nodejs, Docker.
     **Create dashboard**
     
     - [Import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) from grafana-dashboard.json.
+      
+      ![Untitled](https://user-images.githubusercontent.com/62415557/165243673-7085e397-41da-4cb3-b3e4-730036f17df1.png)
       
 ## Reference
 
