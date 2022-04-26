@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['localhost:3001']
+        labels:
+          service: 'my-service'
+          group: 'production'
+          
+rule_files:
+  - "rule.yaml"
+  
+# Alerting specifies settings related to the Alertmanager
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets:
+        # Alertmanager's default port is 9093
+        - localhost:9093

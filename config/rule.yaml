@@ -1,0 +1,10 @@
+groups:
+- name: example
+  rules:
+  - alert: APITooManyRequestsPerMinute
+    expr: sum(rate(http_request_duration_ms_count[1m])) by (service, route, method, code)  * 60 > 10
+    #for: 5s
+    labels:
+      severity: critical
+    annotations:
+      summary: Too many requests on {{ $labels.service }} and {{ $labels.method }} {{ $labels.route }}
