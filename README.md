@@ -59,7 +59,7 @@ Nodejs, Docker.
 
     - access: browser
 
-    **Import dashboard
+    **Import dashboard**
     
     - Grafana Dashboard to import: /grafana-dashboard.json.
     
