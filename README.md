@@ -59,8 +59,16 @@ Nodejs, Docker.
 
     - access: browser
 
-    **Import dashboard**
+    **Create dashboard**
     
-    - Grafana Dashboard to import: /grafana-dashboard.json.
-    
-    
+    - [Import](https://grafana.com/docs/grafana/latest/dashboards/export-import/#import-dashboard) from grafana-dashboard.json.
+      
+## Reference
+
+[1] RisingStack - https://github.com/RisingStack/example-prometheus-nodejs/
+
+[2] Prometheus Docs - https://prometheus.io/docs
+
+[3] Grafana Docs - https://grafana.com/docs/
+
+[4] Prom-client - https://www.npmjs.com/package/prom-client
